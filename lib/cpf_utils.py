@@ -4,6 +4,13 @@ import re
 import fuzzer
 import sys
 
+#########################################
+#                                       #
+# by firedragon9511                     #
+# https://github.com/firedragon9511/    #
+#                                       #
+#########################################
+
 class CPFUtils:
     def __init__(self, args) -> None:
         self.args = args
