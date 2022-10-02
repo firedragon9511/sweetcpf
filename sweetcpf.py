@@ -5,6 +5,13 @@ sys.path.insert(1, 'lib')
 ##########################
 import cpf_utils
 
+#########################################
+#                                       #
+# by firedragon9511                     #
+# https://github.com/firedragon9511/    #
+#                                       #
+#########################################
+
 args = None
 cpfUtils: cpf_utils.CPFUtils = None
 
