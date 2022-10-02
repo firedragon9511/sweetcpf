@@ -82,8 +82,6 @@ def init():
 
     cpfUtils = cpf_utils.CPFUtils(args)
 
-    #print(cpfUtils.extract_cpf('111.444.777-35 asddasjdsa 222.333.555-35'))
-
     process_args()
     pass
 
