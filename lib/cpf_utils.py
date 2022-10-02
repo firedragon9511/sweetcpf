@@ -77,14 +77,20 @@ class CPFUtils:
         strm = open(file, 'r')
         data: list = strm.read().split('\n')
         for d in data:
-            self.pipe(d + ':' + str(self.validate(d)))
+            try:
+                self.pipe(d + ':' + str(self.validate(d)))
+            except ValueError as e:
+                self.pipe("Formato invalido: " + d)
         return
 
 
     def validate_stdin(self):
         for line in sys.stdin:
             line = line.replace('\n', '')
-            self.pipe(line + ':' + str(self.validate(line)))
+            try:
+                self.pipe(line + ':' + str(self.validate(line)))
+            except ValueError as e:
+                self.pipe("Formato invalido: " + line)
 
 
     def format_stdin(self):
