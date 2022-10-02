@@ -18,6 +18,7 @@ class CPFUtils:
     def format_cpf(self, raw_cpf):
         if len(raw_cpf) < 10:
             return "Formato Inválido: " + raw_cpf
+        raw_cpf = self.clear_cpf(raw_cpf)
         return raw_cpf[:3] + "." + raw_cpf[3:6] + "." + raw_cpf[6:9] + "-" + raw_cpf[9] + raw_cpf[10] + raw_cpf[11:]
 
     
