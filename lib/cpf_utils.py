@@ -154,3 +154,17 @@ class CPFUtils:
             if self.validate(cpf):
                 arr2_final.append(cpf)
         return arr + arr2_final
+
+    
+    def from_to(self, from_cpf, to_cpf):
+        from_cpf = int(self.clear_cpf(from_cpf)[:9])
+        to_cpf = int(self.clear_cpf(to_cpf)[:9])
+        def padding(cpf_n):
+            cpf_n = str(cpf_n)
+            return ('0' * (9 - len(cpf_n))) + cpf_n
+
+        for cpf in range(from_cpf, to_cpf + 1):
+            self.pipe(self.fix_cpf(padding(cpf)))
+
+        return
+        
