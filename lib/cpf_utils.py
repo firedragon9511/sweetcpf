@@ -82,6 +82,15 @@ class CPFUtils:
         cpf = self.clear_cpf(cpf)
         return self.fix_cpf(cpf[:9]) == cpf
 
+
+    def format_list(self, file):
+        strm = open(file, 'r')
+        data: list = strm.read().split('\n')
+        for d in data:
+            self.pipe(self.format_cpf(d))
+            
+        return
+
     
     def validate_list(self, file: str):
         strm = open(file, 'r')

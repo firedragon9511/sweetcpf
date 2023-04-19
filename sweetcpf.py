@@ -49,6 +49,9 @@ def process_args():
     if args.val_stdin:
         cpfUtils.validate_stdin()
 
+    if args.format_list:
+        cpfUtils.format_list(args.format_list)
+
     if args.format_stdin:
         cpfUtils.format_stdin()
 
@@ -83,6 +86,7 @@ def init():
     parser.add_argument('-aG','--gen-all', dest='gen_all', help='Gerar todas as possibilidades existentes.', default=False, required=False, action='store_true')
     parser.add_argument('-f', '--format', dest='format', help='Formatar um CPF único.', type=str, required=False, metavar='CPF')
     parser.add_argument('-fA', '--format-all', dest='format_cpf', help='Resultados mostram CPFs formatados.', default=False, action='store_true')
+    parser.add_argument('-fL', '--format-list', dest='format_list', help='Formatar uma lista de CPFs.', default=False, action='store', type=str)
     parser.add_argument('-fP', '--format-stdin', dest='format_stdin', help='Formatar uma lista de CPFs recebidas por um pipe.', default=False, action='store_true')
     parser.add_argument('-c','--fix', dest='fix', action='store', type=str, help='Corrigir um CPF.', required=False, metavar='CPF')
     parser.add_argument('-cL','--fix-list', dest='fix_list', action='store', type=str, help='Corrigir uma lista de CPFs.', required=False, metavar='ARQUIVO')
